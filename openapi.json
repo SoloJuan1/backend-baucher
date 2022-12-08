@@ -1,0 +1,3456 @@
+
+> appbackend-baucher@0.0.1 preopenapi-spec
+> npm run build
+
+
+> appbackend-baucher@0.0.1 build
+> lb-tsc
+
+
+> appbackend-baucher@0.0.1 openapi-spec
+> node ./dist/openapi-spec
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "appbackend-baucher",
+    "version": "0.0.1",
+    "description": "appbackend-baucher",
+    "contact": {
+      "name": "SoloJuan1",
+      "email": "jclmh@outlook.es"
+    }
+  },
+  "paths": {
+    "/bauchers/count": {
+      "get": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "count",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Baucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Baucher>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BaucherController.count"
+      }
+    },
+    "/bauchers/{id}/detallebauchers": {
+      "post": {
+        "x-controller-name": "BaucherDetallebaucherController",
+        "x-operation-name": "create",
+        "tags": [
+          "BaucherDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detallebaucher"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDetallebaucherInBaucher"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BaucherDetallebaucherController.create"
+      },
+      "patch": {
+        "x-controller-name": "BaucherDetallebaucherController",
+        "x-operation-name": "patch",
+        "tags": [
+          "BaucherDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher.Detallebaucher PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Detallebaucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Detallebaucher>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallebaucherPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BaucherDetallebaucherController.patch"
+      },
+      "get": {
+        "x-controller-name": "BaucherDetallebaucherController",
+        "x-operation-name": "find",
+        "tags": [
+          "BaucherDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Baucher has many Detallebaucher",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Detallebaucher"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BaucherDetallebaucherController.find"
+      },
+      "delete": {
+        "x-controller-name": "BaucherDetallebaucherController",
+        "x-operation-name": "delete",
+        "tags": [
+          "BaucherDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher.Detallebaucher DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Detallebaucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Detallebaucher>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BaucherDetallebaucherController.delete"
+      }
+    },
+    "/bauchers/{id}": {
+      "put": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Baucher PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Baucher"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BaucherController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Baucher PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaucherPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BaucherController.updateById"
+      },
+      "get": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "findById",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaucherWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Baucher.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BaucherController.findById"
+      },
+      "delete": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Baucher DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "BaucherController.deleteById"
+      }
+    },
+    "/bauchers": {
+      "post": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "create",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Baucher"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBaucher"
+              }
+            }
+          }
+        },
+        "operationId": "BaucherController.create"
+      },
+      "patch": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Baucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Baucher>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaucherPartial"
+              }
+            }
+          }
+        },
+        "operationId": "BaucherController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "BaucherController",
+        "x-operation-name": "find",
+        "tags": [
+          "BaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Baucher model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BaucherWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Baucher.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BaucherController.find"
+      }
+    },
+    "/cuentas/count": {
+      "get": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "count",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Cuenta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Cuenta>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CuentaController.count"
+      }
+    },
+    "/cuentas/{id}/detallebauchers": {
+      "post": {
+        "x-controller-name": "CuentaDetallebaucherController",
+        "x-operation-name": "create",
+        "tags": [
+          "CuentaDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detallebaucher"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDetallebaucherInCuenta"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CuentaDetallebaucherController.create"
+      },
+      "patch": {
+        "x-controller-name": "CuentaDetallebaucherController",
+        "x-operation-name": "patch",
+        "tags": [
+          "CuentaDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta.Detallebaucher PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Detallebaucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Detallebaucher>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallebaucherPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CuentaDetallebaucherController.patch"
+      },
+      "get": {
+        "x-controller-name": "CuentaDetallebaucherController",
+        "x-operation-name": "find",
+        "tags": [
+          "CuentaDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Cuenta has many Detallebaucher",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Detallebaucher"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CuentaDetallebaucherController.find"
+      },
+      "delete": {
+        "x-controller-name": "CuentaDetallebaucherController",
+        "x-operation-name": "delete",
+        "tags": [
+          "CuentaDetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta.Detallebaucher DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Detallebaucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Detallebaucher>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CuentaDetallebaucherController.delete"
+      }
+    },
+    "/cuentas/{id}/empleado": {
+      "get": {
+        "x-controller-name": "CuentaEmpleadoController",
+        "x-operation-name": "getEmpleado",
+        "tags": [
+          "CuentaEmpleadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado belonging to Cuenta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Empleado"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CuentaEmpleadoController.getEmpleado"
+      }
+    },
+    "/cuentas/{id}": {
+      "put": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Cuenta PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cuenta"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CuentaController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Cuenta PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CuentaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CuentaController.updateById"
+      },
+      "get": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "findById",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CuentaWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cuenta.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CuentaController.findById"
+      },
+      "delete": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Cuenta DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CuentaController.deleteById"
+      }
+    },
+    "/cuentas": {
+      "post": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "create",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cuenta"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCuenta"
+              }
+            }
+          }
+        },
+        "operationId": "CuentaController.create"
+      },
+      "patch": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Cuenta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Cuenta>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CuentaPartial"
+              }
+            }
+          }
+        },
+        "operationId": "CuentaController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "CuentaController",
+        "x-operation-name": "find",
+        "tags": [
+          "CuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Cuenta model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuentaWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cuenta.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CuentaController.find"
+      }
+    },
+    "/detallebauchers/count": {
+      "get": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "count",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Detallebaucher model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Detallebaucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Detallebaucher>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetallebaucherController.count"
+      }
+    },
+    "/detallebauchers/{id}/baucher": {
+      "get": {
+        "x-controller-name": "DetallebaucherBaucherController",
+        "x-operation-name": "getBaucher",
+        "tags": [
+          "DetallebaucherBaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Baucher belonging to Detallebaucher",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Baucher"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "DetallebaucherBaucherController.getBaucher"
+      }
+    },
+    "/detallebauchers/{id}/cuenta": {
+      "get": {
+        "x-controller-name": "DetallebaucherCuentaController",
+        "x-operation-name": "getCuenta",
+        "tags": [
+          "DetallebaucherCuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cuenta belonging to Detallebaucher",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cuenta"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "DetallebaucherCuentaController.getCuenta"
+      }
+    },
+    "/detallebauchers/{id}": {
+      "put": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Detallebaucher PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Detallebaucher"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "DetallebaucherController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Detallebaucher PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallebaucherPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "DetallebaucherController.updateById"
+      },
+      "get": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "findById",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Detallebaucher model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetallebaucherWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detallebaucher.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetallebaucherController.findById"
+      },
+      "delete": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Detallebaucher DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "DetallebaucherController.deleteById"
+      }
+    },
+    "/detallebauchers": {
+      "post": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "create",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Detallebaucher model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detallebaucher"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewDetallebaucher"
+              }
+            }
+          }
+        },
+        "operationId": "DetallebaucherController.create"
+      },
+      "patch": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Detallebaucher PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Detallebaucher.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Detallebaucher>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallebaucherPartial"
+              }
+            }
+          }
+        },
+        "operationId": "DetallebaucherController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "DetallebaucherController",
+        "x-operation-name": "find",
+        "tags": [
+          "DetallebaucherController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Detallebaucher model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DetallebaucherWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detallebaucher.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "DetallebaucherController.find"
+      }
+    },
+    "/empleados/count": {
+      "get": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "count",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Empleado.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Empleado>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EmpleadoController.count"
+      }
+    },
+    "/empleados/{id}/cuentas": {
+      "post": {
+        "x-controller-name": "EmpleadoCuentaController",
+        "x-operation-name": "create",
+        "tags": [
+          "EmpleadoCuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cuenta"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCuentaInEmpleado"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EmpleadoCuentaController.create"
+      },
+      "patch": {
+        "x-controller-name": "EmpleadoCuentaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "EmpleadoCuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado.Cuenta PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Cuenta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Cuenta>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CuentaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EmpleadoCuentaController.patch"
+      },
+      "get": {
+        "x-controller-name": "EmpleadoCuentaController",
+        "x-operation-name": "find",
+        "tags": [
+          "EmpleadoCuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Empleado has many Cuenta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cuenta"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EmpleadoCuentaController.find"
+      },
+      "delete": {
+        "x-controller-name": "EmpleadoCuentaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "EmpleadoCuentaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado.Cuenta DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Cuenta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Cuenta>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EmpleadoCuentaController.delete"
+      }
+    },
+    "/empleados/{id}": {
+      "put": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Empleado PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Empleado"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EmpleadoController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Empleado PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EmpleadoController.updateById"
+      },
+      "get": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "findById",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpleadoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empleado.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EmpleadoController.findById"
+      },
+      "delete": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Empleado DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EmpleadoController.deleteById"
+      }
+    },
+    "/empleados": {
+      "post": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "create",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empleado"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEmpleado"
+              }
+            }
+          }
+        },
+        "operationId": "EmpleadoController.create"
+      },
+      "patch": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Empleado PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Empleado.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Empleado>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "EmpleadoController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "EmpleadoController",
+        "x-operation-name": "find",
+        "tags": [
+          "EmpleadoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Empleado model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpleadoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empleado.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EmpleadoController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Detallebaucher": {
+        "title": "Detallebaucher",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "baucherid": {
+            "type": "string"
+          },
+          "cuentaid": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "string"
+          },
+          "baucherId": {
+            "type": "string"
+          },
+          "cuentaId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "baucherid",
+          "cuentaid",
+          "valor"
+        ],
+        "additionalProperties": false
+      },
+      "NewDetallebaucherInBaucher": {
+        "title": "NewDetallebaucherInBaucher",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Detallebaucher, 'id'>, 'baucherId'>, schemaOptions: { title: 'NewDetallebaucherInBaucher', exclude: [ 'id' ], optional: [ 'baucherId' ] })",
+        "properties": {
+          "baucherid": {
+            "type": "string"
+          },
+          "cuentaid": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "string"
+          },
+          "baucherId": {
+            "type": "string"
+          },
+          "cuentaId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "baucherid",
+          "cuentaid",
+          "valor"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Detallebaucher, 'id'>, 'baucherId'>"
+      },
+      "DetallebaucherPartial": {
+        "title": "DetallebaucherPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Detallebaucher>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "baucherid": {
+            "type": "string"
+          },
+          "cuentaid": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "string"
+          },
+          "baucherId": {
+            "type": "string"
+          },
+          "cuentaId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Detallebaucher>"
+      },
+      "Baucher": {
+        "title": "Baucher",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "empleadoid": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "empleadoid",
+          "fecha"
+        ],
+        "additionalProperties": false
+      },
+      "NewBaucher": {
+        "title": "NewBaucher",
+        "type": "object",
+        "description": "(tsType: Omit<Baucher, 'id'>, schemaOptions: { title: 'NewBaucher', exclude: [ 'id' ] })",
+        "properties": {
+          "empleadoid": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "empleadoid",
+          "fecha"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Baucher, 'id'>"
+      },
+      "EmpleadoWithRelations": {
+        "title": "EmpleadoWithRelations",
+        "type": "object",
+        "description": "(tsType: EmpleadoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "codigoEmpleado": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "sueldo": {
+            "type": "string"
+          },
+          "cuentas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CuentaWithRelations"
+            }
+          }
+        },
+        "required": [
+          "codigoEmpleado",
+          "nombre",
+          "sueldo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "EmpleadoWithRelations"
+      },
+      "CuentaWithRelations": {
+        "title": "CuentaWithRelations",
+        "type": "object",
+        "description": "(tsType: CuentaWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          },
+          "empleadoId": {
+            "type": "string"
+          },
+          "empleado": {
+            "$ref": "#/components/schemas/EmpleadoWithRelations"
+          },
+          "detallebauchers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetallebaucherWithRelations"
+            }
+          }
+        },
+        "required": [
+          "nombre",
+          "tipo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "CuentaWithRelations"
+      },
+      "DetallebaucherWithRelations": {
+        "title": "DetallebaucherWithRelations",
+        "type": "object",
+        "description": "(tsType: DetallebaucherWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "baucherid": {
+            "type": "string"
+          },
+          "cuentaid": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "string"
+          },
+          "baucherId": {
+            "type": "string"
+          },
+          "cuentaId": {
+            "type": "string"
+          },
+          "baucher": {
+            "$ref": "#/components/schemas/BaucherWithRelations"
+          },
+          "cuenta": {
+            "$ref": "#/components/schemas/CuentaWithRelations"
+          }
+        },
+        "required": [
+          "baucherid",
+          "cuentaid",
+          "valor"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "DetallebaucherWithRelations"
+      },
+      "BaucherWithRelations": {
+        "title": "BaucherWithRelations",
+        "type": "object",
+        "description": "(tsType: BaucherWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "empleadoid": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "detallebauchers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetallebaucherWithRelations"
+            }
+          }
+        },
+        "required": [
+          "empleadoid",
+          "fecha"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "BaucherWithRelations"
+      },
+      "BaucherPartial": {
+        "title": "BaucherPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Baucher>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "empleadoid": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Baucher>"
+      },
+      "NewDetallebaucherInCuenta": {
+        "title": "NewDetallebaucherInCuenta",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Detallebaucher, 'id'>, 'cuentaId'>, schemaOptions: { title: 'NewDetallebaucherInCuenta', exclude: [ 'id' ], optional: [ 'cuentaId' ] })",
+        "properties": {
+          "baucherid": {
+            "type": "string"
+          },
+          "cuentaid": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "string"
+          },
+          "baucherId": {
+            "type": "string"
+          },
+          "cuentaId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "baucherid",
+          "cuentaid",
+          "valor"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Detallebaucher, 'id'>, 'cuentaId'>"
+      },
+      "Empleado": {
+        "title": "Empleado",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "codigoEmpleado": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "sueldo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "codigoEmpleado",
+          "nombre",
+          "sueldo"
+        ],
+        "additionalProperties": false
+      },
+      "Cuenta": {
+        "title": "Cuenta",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          },
+          "empleadoId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nombre",
+          "tipo"
+        ],
+        "additionalProperties": false
+      },
+      "NewCuenta": {
+        "title": "NewCuenta",
+        "type": "object",
+        "description": "(tsType: Omit<Cuenta, 'id'>, schemaOptions: { title: 'NewCuenta', exclude: [ 'id' ] })",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          },
+          "empleadoId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nombre",
+          "tipo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Cuenta, 'id'>"
+      },
+      "CuentaPartial": {
+        "title": "CuentaPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Cuenta>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          },
+          "empleadoId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Cuenta>"
+      },
+      "NewDetallebaucher": {
+        "title": "NewDetallebaucher",
+        "type": "object",
+        "description": "(tsType: Omit<Detallebaucher, 'id'>, schemaOptions: { title: 'NewDetallebaucher', exclude: [ 'id' ] })",
+        "properties": {
+          "baucherid": {
+            "type": "string"
+          },
+          "cuentaid": {
+            "type": "string"
+          },
+          "valor": {
+            "type": "string"
+          },
+          "baucherId": {
+            "type": "string"
+          },
+          "cuentaId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "baucherid",
+          "cuentaid",
+          "valor"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Detallebaucher, 'id'>"
+      },
+      "NewCuentaInEmpleado": {
+        "title": "NewCuentaInEmpleado",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Cuenta, 'id'>, 'empleadoId'>, schemaOptions: { title: 'NewCuentaInEmpleado', exclude: [ 'id' ], optional: [ 'empleadoId' ] })",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string"
+          },
+          "empleadoId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "nombre",
+          "tipo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Cuenta, 'id'>, 'empleadoId'>"
+      },
+      "NewEmpleado": {
+        "title": "NewEmpleado",
+        "type": "object",
+        "description": "(tsType: Omit<Empleado, 'id'>, schemaOptions: { title: 'NewEmpleado', exclude: [ 'id' ] })",
+        "properties": {
+          "codigoEmpleado": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "sueldo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "codigoEmpleado",
+          "nombre",
+          "sueldo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Empleado, 'id'>"
+      },
+      "EmpleadoPartial": {
+        "title": "EmpleadoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Empleado>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "codigoEmpleado": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "sueldo": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Empleado>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Baucher.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Baucher.ScopeFilter"
+      },
+      "Baucher.IncludeFilter.Items": {
+        "title": "Baucher.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Baucher.ScopeFilter"
+          }
+        }
+      },
+      "Baucher.Filter": {
+        "type": "object",
+        "title": "Baucher.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "empleadoid": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "empleadoid",
+                    "fecha"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Baucher.Fields"
+          },
+          "include": {
+            "title": "Baucher.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Baucher.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Baucher>"
+      },
+      "Baucher.Filter1": {
+        "type": "object",
+        "title": "Baucher.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Baucher.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "empleadoid": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "empleadoid",
+                    "fecha"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Baucher.Fields"
+          },
+          "include": {
+            "title": "Baucher.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Baucher.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Baucher>"
+      },
+      "Cuenta.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Cuenta.ScopeFilter"
+      },
+      "Cuenta.IncludeFilter.Items": {
+        "title": "Cuenta.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Cuenta.ScopeFilter"
+          }
+        }
+      },
+      "Cuenta.Filter": {
+        "type": "object",
+        "title": "Cuenta.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "tipo": {
+                    "type": "boolean"
+                  },
+                  "empleadoId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "tipo",
+                    "empleadoId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Cuenta.Fields"
+          },
+          "include": {
+            "title": "Cuenta.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Cuenta.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Cuenta>"
+      },
+      "Cuenta.Filter1": {
+        "type": "object",
+        "title": "Cuenta.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Cuenta.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "tipo": {
+                    "type": "boolean"
+                  },
+                  "empleadoId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "tipo",
+                    "empleadoId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Cuenta.Fields"
+          },
+          "include": {
+            "title": "Cuenta.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Cuenta.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Cuenta>"
+      },
+      "Detallebaucher.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Detallebaucher.ScopeFilter"
+      },
+      "Detallebaucher.IncludeFilter.Items": {
+        "title": "Detallebaucher.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Detallebaucher.ScopeFilter"
+          }
+        }
+      },
+      "Detallebaucher.Filter": {
+        "type": "object",
+        "title": "Detallebaucher.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "baucherid": {
+                    "type": "boolean"
+                  },
+                  "cuentaid": {
+                    "type": "boolean"
+                  },
+                  "valor": {
+                    "type": "boolean"
+                  },
+                  "baucherId": {
+                    "type": "boolean"
+                  },
+                  "cuentaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "baucherid",
+                    "cuentaid",
+                    "valor",
+                    "baucherId",
+                    "cuentaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Detallebaucher.Fields"
+          },
+          "include": {
+            "title": "Detallebaucher.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Detallebaucher.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Detallebaucher>"
+      },
+      "Detallebaucher.Filter1": {
+        "type": "object",
+        "title": "Detallebaucher.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Detallebaucher.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "baucherid": {
+                    "type": "boolean"
+                  },
+                  "cuentaid": {
+                    "type": "boolean"
+                  },
+                  "valor": {
+                    "type": "boolean"
+                  },
+                  "baucherId": {
+                    "type": "boolean"
+                  },
+                  "cuentaId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "baucherid",
+                    "cuentaid",
+                    "valor",
+                    "baucherId",
+                    "cuentaId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Detallebaucher.Fields"
+          },
+          "include": {
+            "title": "Detallebaucher.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Detallebaucher.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Detallebaucher>"
+      },
+      "Empleado.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Empleado.ScopeFilter"
+      },
+      "Empleado.IncludeFilter.Items": {
+        "title": "Empleado.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Empleado.ScopeFilter"
+          }
+        }
+      },
+      "Empleado.Filter": {
+        "type": "object",
+        "title": "Empleado.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "codigoEmpleado": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "sueldo": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "codigoEmpleado",
+                    "nombre",
+                    "sueldo"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Empleado.Fields"
+          },
+          "include": {
+            "title": "Empleado.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Empleado.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Empleado>"
+      },
+      "Empleado.Filter1": {
+        "type": "object",
+        "title": "Empleado.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Empleado.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "codigoEmpleado": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "sueldo": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "codigoEmpleado",
+                    "nombre",
+                    "sueldo"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Empleado.Fields"
+          },
+          "include": {
+            "title": "Empleado.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Empleado.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Empleado>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}
